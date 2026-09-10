@@ -22,7 +22,7 @@ export function ServicePageHero({
   defaultService?: (typeof SERVICE_INTEREST_OPTIONS)[number];
 }) {
   const textColumn = (
-    <div className={showEnquiryForm ? "md:col-span-7" : "relative mx-auto w-full max-w-[1280px] px-6 md:px-10"}>
+    <div className={showEnquiryForm ? "md:col-span-8" : "relative mx-auto w-full max-w-[1280px] px-6 md:px-10"}>
       {showBreadcrumb ? (
         <Link href="/services" className="mb-6 inline-flex items-center gap-2 text-sm text-cream/60 hover:text-gold">
           ← Back to all services
@@ -38,7 +38,7 @@ export function ServicePageHero({
         <AbstractHeroPattern variant={variant} />
         <div className="relative mx-auto grid w-full max-w-[1280px] grid-cols-1 gap-12 px-6 md:grid-cols-12 md:items-start md:gap-8 md:px-10">
           {textColumn}
-          <div className="md:col-span-5 md:col-start-8">
+          <div className="md:col-span-4 md:col-start-9">
             <HeroEnquiryCard defaultService={defaultService} />
           </div>
         </div>

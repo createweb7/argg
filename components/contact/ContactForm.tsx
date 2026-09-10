@@ -21,6 +21,10 @@ const baseValues: ContactInput = {
   message: "",
 };
 
+function quickEnquiryMessage(service?: string) {
+  return `Quick enquiry from the website — interested in ${service || "ARGG Associates services"}.`;
+}
+
 export function ContactForm({
   defaultService,
   compact = false,
@@ -28,9 +32,14 @@ export function ContactForm({
   defaultService?: (typeof SERVICE_INTEREST_OPTIONS)[number];
   compact?: boolean;
 }) {
-  const initialValues: ContactInput = defaultService
-    ? { ...baseValues, serviceInterest: defaultService }
-    : baseValues;
+  const initialValues: ContactInput = {
+    ...baseValues,
+    serviceInterest: defaultService ?? "",
+    // The compact hero form skips the Message field to stay short — submit
+    // a sensible default instead so the (shared) schema's message
+    // requirement is still satisfied without asking for it twice.
+    message: compact ? quickEnquiryMessage(defaultService) : "",
+  };
   const [values, setValues] = useState<ContactInput>(initialValues);
   const [errors, setErrors] = useState<ContactFieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
@@ -38,7 +47,11 @@ export function ContactForm({
   const formId = useId();
 
   function update<K extends keyof ContactInput>(key: K, value: ContactInput[K]) {
-    setValues((v) => ({ ...v, [key]: value }));
+    setValues((v) => ({
+      ...v,
+      [key]: value,
+      ...(compact && key === "serviceInterest" ? { message: quickEnquiryMessage(value as string) } : null),
+    }));
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -87,9 +100,11 @@ export function ContactForm({
 
   if (status === "success") {
     return (
-      <div role="status" className={`border border-gold-deep/30 bg-cream ${compact ? "p-6" : "p-8"}`}>
-        <h3 className="font-display text-2xl font-medium tracking-tight">Message sent.</h3>
-        <p className="mt-3 leading-relaxed text-ink/70">
+      <div role="status" className={`border border-gold-deep/30 bg-cream ${compact ? "p-5" : "p-8"}`}>
+        <h3 className={`font-display font-medium tracking-tight ${compact ? "text-lg" : "text-2xl"}`}>
+          Message sent.
+        </h3>
+        <p className={`leading-relaxed text-ink/70 ${compact ? "mt-2 text-sm" : "mt-3"}`}>
           Thank you for reaching out — we usually respond within one business day. If your enquiry is
           urgent, call us at{" "}
           <a href={COMPANY.phones[0].href} className="font-medium text-gold-deep">
@@ -100,7 +115,7 @@ export function ContactForm({
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 text-sm font-semibold text-gold-deep underline underline-offset-4"
+          className={`font-semibold text-gold-deep underline underline-offset-4 ${compact ? "mt-4 text-xs" : "mt-6 text-sm"}`}
         >
           Send another message
         </button>
@@ -109,9 +124,12 @@ export function ContactForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className={`flex flex-col ${compact ? "gap-4" : "gap-5"}`}>
+    <form onSubmit={handleSubmit} noValidate className={`flex flex-col ${compact ? "gap-3" : "gap-5"}`}>
       {status === "error" && serverError ? (
-        <p role="alert" className="border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
+        <p
+          role="alert"
+          className={`border border-red-300 bg-red-50 text-red-800 ${compact ? "px-3 py-2 text-xs" : "px-4 py-3 text-sm"}`}
+        >
           {serverError}
         </p>
       ) : null}
@@ -121,6 +139,7 @@ export function ContactForm({
         label="Full Name"
         error={errors.name}
         required
+        compact={compact}
         input={(props) => (
           <input
             {...props}
@@ -149,12 +168,13 @@ export function ContactForm({
         />
       )}
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className={`grid grid-cols-1 sm:grid-cols-2 ${compact ? "gap-3" : "gap-5"}`}>
         <Field
           id={`${formId}-email`}
           label="Email"
           error={errors.email}
           required
+          compact={compact}
           input={(props) => (
             <input
               {...props}
@@ -169,6 +189,7 @@ export function ContactForm({
           id={`${formId}-phone`}
           label="Phone"
           error={errors.phone}
+          compact={compact}
           input={(props) => (
             <input
               {...props}
@@ -185,6 +206,7 @@ export function ContactForm({
         id={`${formId}-service`}
         label="Service Interested In"
         error={errors.serviceInterest}
+        compact={compact}
         input={(props) => (
           <select
             {...props}
@@ -201,26 +223,28 @@ export function ContactForm({
         )}
       />
 
-      <Field
-        id={`${formId}-message`}
-        label="Message"
-        error={errors.message}
-        required
-        input={(props) => (
-          <textarea
-            {...props}
-            rows={compact ? 3 : 5}
-            value={values.message}
-            onChange={(e) => update("message", e.target.value)}
-          />
-        )}
-      />
+      {compact ? null : (
+        <Field
+          id={`${formId}-message`}
+          label="Message"
+          error={errors.message}
+          required
+          input={(props) => (
+            <textarea
+              {...props}
+              rows={5}
+              value={values.message}
+              onChange={(e) => update("message", e.target.value)}
+            />
+          )}
+        />
+      )}
 
       <Button
         type="submit"
         variant="primary"
         disabled={status === "submitting"}
-        className={`mt-2 ${compact ? "w-full" : ""}`}
+        className={compact ? "mt-1 w-full py-3 text-xs" : "mt-2"}
       >
         {status === "submitting" ? "Sending…" : "Send Enquiry"}
       </Button>
@@ -233,12 +257,14 @@ function Field({
   label,
   error,
   required,
+  compact = false,
   input,
 }: {
   id: string;
   label: string;
   error?: string;
   required?: boolean;
+  compact?: boolean;
   input: (props: {
     id: string;
     name: string;
@@ -251,8 +277,8 @@ function Field({
   const errorId = `${id}-error`;
 
   return (
-    <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-sm font-medium text-ink/80">
+    <div className={`flex flex-col ${compact ? "gap-1" : "gap-2"}`}>
+      <label htmlFor={id} className={`font-medium text-ink/80 ${compact ? "text-xs" : "text-sm"}`}>
         {label} {required ? <span className="text-gold-deep">*</span> : null}
       </label>
       {input({
@@ -261,11 +287,12 @@ function Field({
         "aria-invalid": Boolean(error),
         "aria-describedby": error ? errorId : undefined,
         required,
-        className:
-          "border border-ink/15 bg-paper px-4 py-3 text-ink placeholder:text-ink/35 focus:border-gold-deep focus:outline-none",
+        className: `border border-ink/15 bg-paper text-ink placeholder:text-ink/35 focus:border-gold-deep focus:outline-none ${
+          compact ? "px-3 py-2 text-sm" : "px-4 py-3"
+        }`,
       })}
       {error ? (
-        <p id={errorId} className="text-sm text-red-700">
+        <p id={errorId} className={`text-red-700 ${compact ? "text-xs" : "text-sm"}`}>
           {error}
         </p>
       ) : null}
