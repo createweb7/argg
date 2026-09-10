@@ -47,6 +47,7 @@ export default function ServicesHubPage() {
         eyebrow="Services"
         title="Financial expertise. Strategic direction. Business growth."
         supporting="Practical solutions designed to help businesses make better decisions, operate efficiently, and grow with confidence."
+        showEnquiryForm
       />
 
       <Section tone="light">

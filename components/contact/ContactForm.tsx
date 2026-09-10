@@ -12,7 +12,7 @@ import { COMPANY } from "@/lib/constants";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-const initialValues: ContactInput = {
+const baseValues: ContactInput = {
   name: "",
   company: "",
   email: "",
@@ -21,7 +21,16 @@ const initialValues: ContactInput = {
   message: "",
 };
 
-export function ContactForm() {
+export function ContactForm({
+  defaultService,
+  compact = false,
+}: {
+  defaultService?: (typeof SERVICE_INTEREST_OPTIONS)[number];
+  compact?: boolean;
+}) {
+  const initialValues: ContactInput = defaultService
+    ? { ...baseValues, serviceInterest: defaultService }
+    : baseValues;
   const [values, setValues] = useState<ContactInput>(initialValues);
   const [errors, setErrors] = useState<ContactFieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
@@ -78,7 +87,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div role="status" className="border border-gold-deep/30 bg-cream p-8">
+      <div role="status" className={`border border-gold-deep/30 bg-cream ${compact ? "p-6" : "p-8"}`}>
         <h3 className="font-display text-2xl font-medium tracking-tight">Message sent.</h3>
         <p className="mt-3 leading-relaxed text-ink/70">
           Thank you for reaching out — we usually respond within one business day. If your enquiry is
@@ -100,7 +109,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+    <form onSubmit={handleSubmit} noValidate className={`flex flex-col ${compact ? "gap-4" : "gap-5"}`}>
       {status === "error" && serverError ? (
         <p role="alert" className="border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800">
           {serverError}
@@ -123,20 +132,22 @@ export function ContactForm() {
         )}
       />
 
-      <Field
-        id={`${formId}-company`}
-        label="Business / Company"
-        error={errors.company}
-        input={(props) => (
-          <input
-            {...props}
-            type="text"
-            autoComplete="organization"
-            value={values.company}
-            onChange={(e) => update("company", e.target.value)}
-          />
-        )}
-      />
+      {compact ? null : (
+        <Field
+          id={`${formId}-company`}
+          label="Business / Company"
+          error={errors.company}
+          input={(props) => (
+            <input
+              {...props}
+              type="text"
+              autoComplete="organization"
+              value={values.company}
+              onChange={(e) => update("company", e.target.value)}
+            />
+          )}
+        />
+      )}
 
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <Field
@@ -198,14 +209,19 @@ export function ContactForm() {
         input={(props) => (
           <textarea
             {...props}
-            rows={5}
+            rows={compact ? 3 : 5}
             value={values.message}
             onChange={(e) => update("message", e.target.value)}
           />
         )}
       />
 
-      <Button type="submit" variant="primary" disabled={status === "submitting"} className="mt-2">
+      <Button
+        type="submit"
+        variant="primary"
+        disabled={status === "submitting"}
+        className={`mt-2 ${compact ? "w-full" : ""}`}
+      >
         {status === "submitting" ? "Sending…" : "Send Enquiry"}
       </Button>
     </form>
