@@ -91,15 +91,10 @@ export default function AboutPage() {
 
       <Section tone="cream">
         <RevealOnScroll>
-          <SectionHeading eyebrow="What We Value" title="How we approach every engagement" />
+          <SectionHeading eyebrow="Founder" title="Led by experience across finance and strategy" />
         </RevealOnScroll>
-        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
-          {VALUES.map((value, i) => (
-            <RevealOnScroll key={value.title} delayMs={i * 80} className="border-t border-ink/10 pt-6">
-              <h3 className="font-display text-xl font-medium tracking-tight">{value.title}</h3>
-              <p className="mt-2 leading-relaxed text-ink/65">{value.description}</p>
-            </RevealOnScroll>
-          ))}
+        <div className="mt-14">
+          <FounderProfile />
         </div>
       </Section>
 
@@ -120,10 +115,15 @@ export default function AboutPage() {
 
       <Section tone="cream">
         <RevealOnScroll>
-          <SectionHeading eyebrow="Founder" title="Led by experience across finance and strategy" />
+          <SectionHeading eyebrow="What We Value" title="How we approach every engagement" />
         </RevealOnScroll>
-        <div className="mt-14">
-          <FounderProfile />
+        <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2">
+          {VALUES.map((value, i) => (
+            <RevealOnScroll key={value.title} delayMs={i * 80} className="border-t border-ink/10 pt-6">
+              <h3 className="font-display text-xl font-medium tracking-tight">{value.title}</h3>
+              <p className="mt-2 leading-relaxed text-ink/65">{value.description}</p>
+            </RevealOnScroll>
+          ))}
         </div>
       </Section>
 
