@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center" aria-label={`${COMPANY.name} — Home`}>
-              <LogoMark heightClass="h-10" chip />
+              <LogoMark heightClass="h-14" chip />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/60">
               {COMPANY.name} is a business advisory firm helping individuals and businesses with
