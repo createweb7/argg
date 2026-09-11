@@ -6,15 +6,26 @@ export function FounderProfile() {
   return (
     <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12 md:gap-10">
       <RevealOnScroll className="md:col-span-5">
-        <div className="relative mx-auto aspect-3/4 w-full max-w-sm overflow-hidden md:mx-0">
-          <Image
-            src="/images/about-founder.webp"
-            alt={`${FOUNDER.name}, founder of ARGG Associates`}
-            fill
-            sizes="(min-width: 768px) 400px, 90vw"
-            className="photo-fade object-cover"
-            priority={false}
-          />
+        <div className="relative mx-auto w-full max-w-sm pb-10 pr-10 md:mx-0">
+          <div className="relative aspect-3/4 w-full overflow-hidden">
+            <Image
+              src="/images/about-founder.webp"
+              alt={`${FOUNDER.name}, founder of ARGG Associates`}
+              fill
+              sizes="(min-width: 768px) 400px, 90vw"
+              className="photo-fade object-cover"
+              priority={false}
+            />
+          </div>
+          <div className="absolute right-0 bottom-0 aspect-3/4 w-2/5 overflow-hidden border-4 border-paper shadow-xl">
+            <Image
+              src="/images/founder-avatar.webp"
+              alt={`${FOUNDER.name} in the ARGG Associates office`}
+              fill
+              sizes="160px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </RevealOnScroll>
 

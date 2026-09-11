@@ -4,29 +4,18 @@ import path from "path";
 const SRC = path.join(process.cwd(), "docs");
 const OUT = path.join(process.cwd(), "public/images");
 
-type Box = { l: number; t: number; r: number; b: number };
-
-async function cropPctWebp(file: string, out: string, box: Box) {
-  const img = sharp(path.join(SRC, file));
-  const meta = await img.metadata();
-  const w = meta.width!;
-  const h = meta.height!;
-  const left = Math.round(w * box.l);
-  const top = Math.round(h * box.t);
-  const width = Math.round(w * (box.r - box.l));
-  const height = Math.round(h * (box.b - box.t));
-
-  await sharp(path.join(SRC, file))
-    .extract({ left, top, width, height })
-    .webp({ quality: 88 })
-    .toFile(path.join(OUT, out));
-
-  console.log(`wrote ${out} (${width}x${height} from ${file})`);
-}
-
 async function main() {
-  await cropPctWebp("2.jpeg", "about-founder.webp", { l: 0.64, t: 0.04, r: 0.98, b: 0.43 });
-  await cropPctWebp("3.jpeg", "founder-avatar.webp", { l: 0.605, t: 0.065, r: 0.945, b: 0.365 });
+  // Real founder photography (not flyer crops) — used on the About page
+  // only, never on Home. Cropped to a consistent 3:4 portrait ratio.
+  await sharp(path.join(SRC, "founder-main.jpeg"))
+    .resize(900, 1200, { fit: "cover", position: "attention" })
+    .webp({ quality: 88 })
+    .toFile(path.join(OUT, "about-founder.webp"));
+
+  await sharp(path.join(SRC, "founder-secondary.jpeg"))
+    .resize(600, 800, { fit: "cover", position: "attention" })
+    .webp({ quality: 88 })
+    .toFile(path.join(OUT, "founder-avatar.webp"));
 
   // Home hero background — premium office/skyline scene with real ARGG
   // branding visible on the folder. Resize down slightly (still comfortably
