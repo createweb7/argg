@@ -11,11 +11,8 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-3" aria-label={`${COMPANY.name} — Home`}>
-              <LogoMark size={64} chip />
-              <span className="font-display text-lg font-medium tracking-tight">
-                ARGG <span className="text-gold">Associates</span>
-              </span>
+            <Link href="/" className="flex items-center" aria-label={`${COMPANY.name} — Home`}>
+              <LogoMark heightClass="h-10" chip />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/60">
               {COMPANY.name} is a business advisory firm helping individuals and businesses with

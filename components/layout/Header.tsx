@@ -94,11 +94,8 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex h-24 max-w-[1280px] items-center justify-between px-6 md:px-10">
-          <Link href="/" className="flex items-center gap-3" aria-label={`${COMPANY.name} — Home`}>
-            <LogoMark size={72} />
-            <span className={`hidden font-display text-lg font-medium tracking-tight sm:block ${textColor}`}>
-              ARGG <span className="text-gold-deep">Associates</span>
-            </span>
+          <Link href="/" className="flex items-center" aria-label={`${COMPANY.name} — Home`}>
+            <LogoMark heightClass="h-9 md:h-[52px]" />
           </Link>
 
           <nav className="hidden items-center gap-9 md:flex">
