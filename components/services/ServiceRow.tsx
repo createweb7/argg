@@ -9,6 +9,11 @@ export function ServiceRow({ group, index }: { group: ServiceGroup; index: numbe
       <div className={`md:col-span-4 ${reversed ? "md:order-2" : ""}`}>
         <span className="font-display text-3xl text-gold-deep">{String(index + 1).padStart(2, "0")}</span>
         <h3 className="mt-3 font-display text-2xl font-medium tracking-tight">{group.title}</h3>
+        {group.tagline ? (
+          <p className="mt-3 max-w-xs font-display text-base leading-snug text-ink/60 italic">
+            “{group.tagline}”
+          </p>
+        ) : null}
       </div>
       <ul className={`grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 md:col-span-8 ${reversed ? "md:order-1" : ""}`}>
         {group.items.map((item) => (

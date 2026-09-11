@@ -2,7 +2,7 @@ export type CoreService = {
   title: string;
   description: string;
   href: string;
-  icon: "chart" | "users" | "receipt" | "percent" | "team" | "cap";
+  icon: "chart" | "users" | "receipt" | "percent" | "team" | "cap" | "badge";
 };
 
 // A curated, more granular view of the 4 pillars for the Home page's
@@ -35,10 +35,10 @@ export const CORE_SERVICES: CoreService[] = [
     icon: "percent",
   },
   {
-    title: "Business Consulting",
-    description: "An honest read on performance, and where to improve it.",
+    title: "Business Registration & Compliance",
+    description: "MSME, GST, and startup registration, plus annual compliance support.",
     href: "/business-advisory-services",
-    icon: "team",
+    icon: "badge",
   },
   {
     title: "Training & Capability Building",

@@ -6,6 +6,7 @@ import {
   IconPercent,
   IconCap,
   IconTarget,
+  IconBadge,
 } from "@/components/icons";
 import type { CoreService } from "@/lib/content/subservices";
 
@@ -16,6 +17,7 @@ const ICONS = {
   percent: IconPercent,
   team: IconTarget,
   cap: IconCap,
+  badge: IconBadge,
 } as const;
 
 export function CoreServiceCard({

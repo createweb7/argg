@@ -1,5 +1,6 @@
 export type ServiceGroup = {
   title: string;
+  tagline?: string;
   items: string[];
 };
 
@@ -76,27 +77,42 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       {
         title: "Taxation Services",
         items: [
-          "Income Tax Return Filing (Individuals, HUF, Business, Professionals)",
-          "Tax Planning & Advisory",
+          "Income Tax Return Filing — Individuals, HUF, Business & Professionals",
           "Form 16 & Form 26AS Reconciliation",
-          "Tax Notice Support",
-          "Capital Gain Computation",
+          "AIS & TIS Reconciliation",
+          "Capital Gains Computation",
+          "Advance Tax Computation & Advisory",
+          "Tax Planning & Tax Optimization",
+          "Tax Notice Response & Representation Support",
           "Salaried Employee Tax Consultation",
+          "Business & Professional Tax Advisory",
         ],
       },
       {
         title: "GST Services",
         items: [
           "GST Registration",
-          "GST Return Filing",
+          "GST Returns Filing",
           "GST Reconciliation",
           "GST Compliance Review",
           "GST Advisory Support",
+          "GST Audit / Reconciliation Support",
+          "GST Notice & Query Response Support",
         ],
       },
       {
         title: "TDS & Compliance",
-        items: ["TDS Returns", "Responding to Tax Notices"],
+        items: [
+          "TDS Returns",
+          "TDS Reconciliation",
+          "TDS Calculation & Compliance",
+          "Form 16 / 16A Support",
+          "TDS Notice & Default Resolution",
+          "TDS Refund / Correction Support",
+          "TDS Applicability Advisory",
+          "Payroll Tax Compliance",
+          "Statutory Compliance Review",
+        ],
       },
     ],
     ctaHeading: "Timely filing, peace of mind.",
@@ -110,23 +126,66 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     shortName: "Business Advisory",
     eyebrow: "03 — Business Advisory",
     intro:
-      "A practical, outside perspective on how your business is really performing — and where it can improve.",
+      "Virtual CFO advisory, business registration and compliance, and accounting support — practical financial leadership for growing businesses.",
     teaser:
-      "Business health checks and process improvement for owners who want an honest, practical read on performance.",
+      "Virtual CFO advisory, business registration, and accounting support for businesses that want financial leadership without the overhead.",
     groups: [
       {
-        title: "Business Consulting",
+        title: "Virtual CFO & Finance Advisory",
+        tagline:
+          "Enterprise-level financial expertise for growing businesses — without the cost of a full-time CFO.",
         items: [
-          "Business Health Check",
-          "Process Improvement",
-          "Profit Improvement Projects",
-          "Startup Financial Advisory",
-          "Cost Optimization Initiatives",
+          "Virtual CFO Services",
+          "Financial Planning & Analysis — FP&A",
+          "Budgeting & Forecasting",
+          "Cash Flow Planning",
+          "Financial MIS & Dashboard",
+          "Cost & Profitability Analysis",
+          "Variance Analysis",
+          "Working Capital Management",
+          "Management Decision Support",
+          "Business Performance Review",
+          "Financial KPI Development",
+          "CXO-Level Finance Advisory",
+          "Board / Management Reporting Support",
+        ],
+      },
+      {
+        title: "Business Registration & Compliance",
+        items: [
+          "MSME / Udyam Registration",
+          "GST Registration",
+          "Professional Tax Registration",
+          "Business Setup Advisory",
+          "PAN / TAN Support",
+          "FSSAI Registration Support",
+          "Startup & Business Registration Support",
+          "Annual Compliance Support",
+          "ROC / MCA Compliance Coordination",
+          "Business Compliance Health Check",
+        ],
+      },
+      {
+        title: "Accounting & Bookkeeping Services",
+        tagline: "Accurate Books. Better Decisions. Stronger Businesses.",
+        items: [
+          "Bookkeeping & Accounting Services",
+          "Monthly / Quarterly Financial Statements",
+          "Accounts Payable & Receivable Management",
+          "Bank Reconciliation",
+          "Ledger Scrutiny & Review",
+          "Month-End Closing Support",
+          "MIS Reporting",
+          "Cash Flow Monitoring",
+          "Expense & Cost Tracking",
+          "Management Reporting",
+          "Accounting Process Review",
         ],
       },
     ],
-    ctaHeading: "Not sure where the gaps are?",
-    ctaSupporting: "A structured business health check is a practical place to start.",
+    ctaHeading: "Ready for financial leadership on your terms?",
+    ctaSupporting:
+      "Let's talk about the CFO-level support, compliance, and bookkeeping your business needs.",
     heroVariant: "advisory",
   },
   {
@@ -136,13 +195,26 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     shortName: "Business Growth",
     eyebrow: "04 — Business Growth",
     intro:
-      "Growth strategy and financial capability-building that align your team's decisions with long-term objectives.",
+      "Financial and management consulting, capability-building, and insurance advisory that align your team's decisions with long-term objectives.",
     teaser:
-      "Growth strategy support paired with practical financial training for founders and finance teams.",
+      "Financial consulting and practical financial training for founders and finance teams.",
     groups: [
       {
-        title: "Growth Strategy",
-        items: ["Growth Strategy Support"],
+        title: "Financial & Management Consulting",
+        items: [
+          "Financial Feasibility Analysis",
+          "Business Financial Planning",
+          "Cost Reduction & Cost Optimization",
+          "Profitability Improvement",
+          "Working Capital Optimization",
+          "Budgeting & Forecasting",
+          "Business Performance Analysis",
+          "Management Decision Support",
+          "Financial Risk Assessment",
+          "Internal Control Review",
+          "Process Improvement",
+          "Business MIS Design",
+        ],
       },
       {
         title: "Training & Capability Building",
@@ -153,6 +225,11 @@ export const SERVICE_PILLARS: ServicePillar[] = [
           "Finance for Non-Finance Managers",
           "Budgeting & Cost Control Programs",
         ],
+      },
+      {
+        title: "Insurance Advisory",
+        tagline: "In partnership with Mayopi Advisories.",
+        items: ["Full service details coming soon."],
       },
     ],
     ctaHeading: "Ready to turn clarity into growth?",
