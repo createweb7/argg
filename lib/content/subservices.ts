@@ -17,9 +17,9 @@ export const CORE_SERVICES: CoreService[] = [
     icon: "chart",
   },
   {
-    title: "Virtual CFO Services",
+    title: "Virtual CFO & Finance Advisory",
     description: "Executive-level financial oversight without a full-time CFO.",
-    href: "/finance-services",
+    href: "/business-advisory-services",
     icon: "users",
   },
   {

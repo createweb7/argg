@@ -26,9 +26,9 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     shortName: "Finance",
     eyebrow: "01 — Finance",
     intro:
-      "Practical financial planning and CFO-level support that turns your numbers into decisions you can act on.",
+      "Practical financial planning that turns your numbers into decisions you can act on.",
     teaser:
-      "Budgeting, forecasting, dashboards, and Virtual CFO support for businesses that want to see further ahead.",
+      "Budgeting, forecasting, cost reduction, and dashboards for businesses that want to see further ahead.",
     groups: [
       {
         title: "Corporate Finance & FP&A",
@@ -41,21 +41,6 @@ export const SERVICE_PILLARS: ServicePillar[] = [
           "Cash Flow Management",
           "Strategic Decision Support",
         ],
-      },
-      {
-        title: "Virtual CFO Services",
-        items: [
-          "Monthly Management Reporting",
-          "Business Performance Review",
-          "Finance Function Transformation",
-          "Internal Financial Controls",
-          "Working Capital Optimization",
-          "Investor & Banker Support",
-        ],
-      },
-      {
-        title: "Accounting & Book Keeping",
-        items: ["Maintaining Books of Accounts", "Financial Statements"],
       },
     ],
     ctaHeading: "Ready for financial clarity?",
