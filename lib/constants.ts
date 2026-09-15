@@ -20,6 +20,18 @@ export const COMPANY = {
   },
 } as const;
 
+export const MAYOPI = {
+  name: "mayopi ADVISORIES",
+  tagline: "Tax Smart. Protected Better. Financially Prepared.",
+  closingTagline: "Tax | GST | Life Insurance | Term Insurance | Savings Plans | Health Insurance",
+  closingLine: "Professional Advice. Informed Decisions. Long-Term Protection.",
+  phones: [
+    { label: "Office", number: "98411 53620", href: "tel:+919841153620" },
+    { label: "Office", number: "93639 53620", href: "tel:+919363953620" },
+    { label: "Enquiry", number: "8682 003 004", href: "tel:+918682003004" },
+  ],
+} as const;
+
 export const FOUNDER = {
   name: "CMA Mathan Ramasamy",
   credentials: "B.Com., M.F.M., FCMA, FCS",

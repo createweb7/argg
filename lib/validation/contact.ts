@@ -5,6 +5,7 @@ export const SERVICE_INTEREST_OPTIONS = [
   "Taxation Services",
   "Business Advisory",
   "Business Growth",
+  "Mayopi Advisories",
   "Not sure yet",
 ] as const;
 
