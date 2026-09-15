@@ -7,7 +7,7 @@ const pillar = getPillarBySlug("finance-services")!;
 export const metadata = buildMetadata({
   title: "Finance Services",
   description:
-    "Corporate finance, FP&A, Virtual CFO services, and accounting support from ARGG Associates — budgeting, forecasting, dashboards, and financial control.",
+    "Corporate finance and FP&A from ARGG Associates — budgeting, forecasting, cost reduction, dashboards, and financial control.",
   path: "/finance-services",
 });
 
