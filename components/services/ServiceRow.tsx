@@ -40,15 +40,15 @@ export function ServiceRow({ group, index }: { group: ServiceGroup; index: numbe
       }`}
     >
       <div className={`md:col-span-4 ${reversed ? "md:order-2" : ""}`}>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
           <span
             className={`flex shrink-0 items-center justify-center rounded-full border border-gold-deep/30 text-gold-deep ${
-              featured ? "h-14 w-14" : "h-10 w-10"
+              featured ? "h-14 w-14" : "h-11 w-11"
             }`}
           >
             <Icon className={featured ? "h-7 w-7" : "h-5 w-5"} />
           </span>
-          <span className={`font-display text-gold-deep ${featured ? "text-base" : "text-sm"}`}>
+          <span className={`font-display text-gold-deep ${featured ? "text-3xl" : "text-2xl"}`}>
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
