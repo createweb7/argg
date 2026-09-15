@@ -16,7 +16,7 @@ export type ServicePillar = {
   groups: ServiceGroup[];
   ctaHeading: string;
   ctaSupporting: string;
-  heroVariant: "finance" | "taxation" | "advisory" | "growth";
+  heroVariant: "finance" | "taxation" | "advisory" | "growth" | "mayopi";
 };
 
 export const SERVICE_PILLARS: ServicePillar[] = [
@@ -199,7 +199,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     shortName: "Business Growth",
     eyebrow: "04 — Business Growth",
     intro:
-      "Financial and management consulting, capability-building, and insurance advisory that align your team's decisions with long-term objectives.",
+      "Financial and management consulting and capability-building that align your team's decisions with long-term objectives.",
     teaser:
       "Financial consulting and practical financial training for founders and finance teams.",
     groups: [
@@ -230,15 +230,137 @@ export const SERVICE_PILLARS: ServicePillar[] = [
           "Budgeting & Cost Control Programs",
         ],
       },
-      {
-        title: "Insurance Advisory",
-        tagline: "In partnership with Mayopi Advisories.",
-        items: ["Full service details coming soon."],
-      },
     ],
     ctaHeading: "Ready to turn clarity into growth?",
     ctaSupporting: "Let's align your financial decisions with where the business is headed.",
     heroVariant: "growth",
+  },
+  {
+    slug: "mayopi-advisories",
+    href: "/mayopi-advisories",
+    name: "Mayopi Advisories",
+    shortName: "Mayopi Advisories",
+    eyebrow: "05 — Mayopi Advisories",
+    intro:
+      "Income Tax, GST, ITAT & GSTAT, and Life, Term, Savings & Health Insurance advisory — in partnership with mayopi ADVISORIES.",
+    teaser:
+      "Tax Smart. Protected Better. Financially Prepared. — tax and insurance advisory from our partner, mayopi ADVISORIES.",
+    groups: [
+      {
+        title: "Income Tax Advisory",
+        tagline: "Accuracy + Compliance + Tax Efficiency",
+        description:
+          "Don't just file your return. Understand your tax. We help individuals and businesses navigate their income-tax responsibilities with greater clarity and accuracy. We provide complete guidelines to our clients.",
+        items: [
+          "Income Tax Return (ITR) preparation & filing",
+          "ITR-1, ITR-2, ITR-3 & ITR-4 assistance",
+          "Salary, House Property & Other Sources",
+          "Capital Gains computation & reporting",
+          "Business & Professional Income",
+          "Tax-saving opportunities and deduction planning",
+          "Notice & compliance assistance",
+          "Advance Tax & tax-planning guidance",
+          "Support for correcting discrepancies and reporting mismatches",
+        ],
+      },
+      {
+        title: "GST Advisory & Compliance",
+        tagline: "Right Reporting + Better Compliance + Reduced Risk",
+        description:
+          "GST compliance should not become a business burden. mayopi ADVISORIES supports businesses in managing their GST responsibilities with a structured and practical approach.",
+        items: [
+          "GST Registration assistance",
+          "GSTR-1 & GSTR-3B filing support",
+          "GST reconciliation & Input Tax Credit review",
+          "GST compliance review",
+          "E-invoice & e-way bill guidance",
+          "GST notices & response assistance",
+          "Registration amendments & cancellation support",
+          "Annual GST compliance assistance",
+          "Basic GST advisory for business transactions",
+        ],
+      },
+      {
+        title: "ITAT & GSTAT Advisory",
+        tagline: "Expert tax advisory for complex matters.",
+        description:
+          "Tax dispute? We help you navigate the next step. mayopi ADVISORIES provides expert advisory and litigation support for ITAT & GSTAT matters, including tax disputes, demand analysis, appeals, documentation and strategic coordination with authorised professionals.",
+        items: [
+          "Income Tax Appeals & ITAT Matters",
+          "GST Appeals & GSTAT Matters",
+          "Tax Demand & Dispute Resolution",
+          "Appeal Strategy & Documentation",
+          "Assessment & Order Review",
+          "Tax Litigation Support & Professional Coordination",
+          "Representation Support through Authorised Professionals",
+        ],
+      },
+      {
+        title: "Life Insurance Advisory",
+        tagline: "Adequate Protection + Suitable Coverage + Long-Term Security",
+        description:
+          "Your income supports your family. Your protection should too. Life insurance is not merely a financial product — it is a mechanism to protect the financial future of the people who depend on you. We assist with understanding and evaluating suitable Life Insurance solutions rather than simply choosing a policy based on premium.",
+        items: [
+          "Income-based protection assessment",
+          "Existing liabilities review",
+          "Family responsibilities planning",
+          "Children's education planning",
+          "Lifestyle commitments",
+          "Future financial goals",
+          "Existing insurance coverage review",
+        ],
+      },
+      {
+        title: "Term Insurance",
+        tagline: "If your income stops, your family's financial plan shouldn't.",
+        description:
+          "Protect your income. Protect your family's future. A family's biggest financial asset is often the earning capacity of its primary income earner.",
+        items: [
+          "Appropriate life cover assessment",
+          "Policy tenure considerations",
+          "Premium affordability",
+          "Existing coverage gaps",
+          "Nominee considerations",
+          "Major exclusions & policy conditions",
+          "Liabilities & future goals impact on protection",
+        ],
+      },
+      {
+        title: "Savings & Regular Income Plans",
+        tagline: "Goal-Based Saving + Financial Discipline + Informed Choice",
+        description:
+          "Save with purpose. Plan with discipline. For clients looking beyond pure protection, we help evaluate suitable long-term savings-oriented insurance solutions.",
+        items: [
+          "Regular savings discipline",
+          "Guaranteed or defined benefits, where applicable",
+          "Maturity benefits",
+          "Money-back / periodic benefit structures",
+          "Long-term financial planning",
+          "Goal-based savings",
+          "Family-oriented financial planning",
+        ],
+      },
+      {
+        title: "Health & Medical Insurance",
+        tagline: "Health Protection + Financial Protection + Family Security",
+        description:
+          "One medical emergency shouldn't become a financial emergency. Healthcare costs can significantly impact family finances. The right health-insurance coverage can provide an important layer of financial protection.",
+        items: [
+          "Individual health-insurance requirements",
+          "Family / floater coverage",
+          "Coverage adequacy & sum insured requirements",
+          "Existing policy gaps & renewal considerations",
+          "Waiting periods",
+          "Major exclusions and conditions",
+          "Cashless hospitalisation features",
+          "Critical illness & additional protection options",
+        ],
+      },
+    ],
+    ctaHeading: "Your money deserves a strategy.",
+    ctaSupporting:
+      "Tax should not be an afterthought, and protection should not begin only after a crisis. Make informed decisions today for a more secure tomorrow.",
+    heroVariant: "mayopi",
   },
 ];
 

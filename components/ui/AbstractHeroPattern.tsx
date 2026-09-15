@@ -6,6 +6,7 @@ const VARIANTS = {
   taxation: { rotate: -30, x1: 30, y1: 0, x2: 100, y2: 80 },
   advisory: { rotate: 20, x1: 0, y1: 40, x2: 80, y2: 100 },
   growth: { rotate: -15, x1: 5, y1: 60, x2: 90, y2: 5 },
+  mayopi: { rotate: 35, x1: 15, y1: 5, x2: 85, y2: 90 },
   contact: { rotate: 60, x1: 40, y1: 0, x2: 100, y2: 100 },
 } as const;
 
