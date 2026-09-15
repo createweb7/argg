@@ -1,7 +1,20 @@
+export type ServiceGroupIcon =
+  | "chart"
+  | "receipt"
+  | "percent"
+  | "badge"
+  | "shield"
+  | "users"
+  | "cap"
+  | "clock"
+  | "target"
+  | "checkcircle";
+
 export type ServiceGroup = {
   title: string;
   tagline?: string;
   description?: string;
+  icon: ServiceGroupIcon;
   items: string[];
 };
 
@@ -33,6 +46,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     groups: [
       {
         title: "Corporate Finance & FP&A",
+        icon: "chart",
         items: [
           "Budgeting & Forecasting",
           "Financial Planning & Analysis",
@@ -45,6 +59,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Independent Director Advisory",
+        icon: "shield",
         tagline: "Board-Ready Expertise. Independent Perspective. Responsible Governance.",
         description:
           "Our expert professionals are equipped to take up Independent Director roles, bringing strong expertise in Finance, Taxation, Risk Management, Corporate Governance and Strategic Decision-Making. ARGG Associates connects businesses with experienced professionals capable of contributing independent judgement, financial intelligence and strategic insight at the board level.",
@@ -80,6 +95,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     groups: [
       {
         title: "Taxation Services",
+        icon: "receipt",
         items: [
           "Income Tax Return Filing — Individuals, HUF, Business & Professionals",
           "Form 16 & Form 26AS Reconciliation",
@@ -94,6 +110,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "GST Services",
+        icon: "percent",
         items: [
           "GST Registration",
           "GST Returns Filing",
@@ -106,6 +123,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "TDS & Compliance",
+        icon: "checkcircle",
         items: [
           "TDS Returns",
           "TDS Reconciliation",
@@ -136,6 +154,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     groups: [
       {
         title: "Virtual CFO & Finance Advisory",
+        icon: "users",
         tagline:
           "Enterprise-level financial expertise for growing businesses — without the cost of a full-time CFO.",
         items: [
@@ -156,6 +175,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Business Registration & Compliance",
+        icon: "badge",
         items: [
           "MSME / Udyam Registration",
           "GST Registration",
@@ -171,6 +191,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Accounting & Bookkeeping Services",
+        icon: "receipt",
         tagline: "Accurate Books. Better Decisions. Stronger Businesses.",
         items: [
           "Bookkeeping & Accounting Services",
@@ -205,6 +226,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     groups: [
       {
         title: "Financial & Management Consulting",
+        icon: "target",
         items: [
           "Financial Feasibility Analysis",
           "Business Financial Planning",
@@ -222,6 +244,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Training & Capability Building",
+        icon: "cap",
         items: [
           "Advanced Excel for Finance",
           "Financial Intelligence with AI",
@@ -248,6 +271,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     groups: [
       {
         title: "Income Tax Advisory",
+        icon: "receipt",
         tagline: "Accuracy + Compliance + Tax Efficiency",
         description:
           "Don't just file your return. Understand your tax. We help individuals and businesses navigate their income-tax responsibilities with greater clarity and accuracy. We provide complete guidelines to our clients.",
@@ -265,6 +289,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "GST Advisory & Compliance",
+        icon: "percent",
         tagline: "Right Reporting + Better Compliance + Reduced Risk",
         description:
           "GST compliance should not become a business burden. mayopi ADVISORIES supports businesses in managing their GST responsibilities with a structured and practical approach.",
@@ -282,6 +307,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "ITAT & GSTAT Advisory",
+        icon: "shield",
         tagline: "Expert tax advisory for complex matters.",
         description:
           "Tax dispute? We help you navigate the next step. mayopi ADVISORIES provides expert advisory and litigation support for ITAT & GSTAT matters, including tax disputes, demand analysis, appeals, documentation and strategic coordination with authorised professionals.",
@@ -297,6 +323,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Life Insurance Advisory",
+        icon: "users",
         tagline: "Adequate Protection + Suitable Coverage + Long-Term Security",
         description:
           "Your income supports your family. Your protection should too. Life insurance is not merely a financial product — it is a mechanism to protect the financial future of the people who depend on you. We assist with understanding and evaluating suitable Life Insurance solutions rather than simply choosing a policy based on premium.",
@@ -312,6 +339,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Term Insurance",
+        icon: "clock",
         tagline: "If your income stops, your family's financial plan shouldn't.",
         description:
           "Protect your income. Protect your family's future. A family's biggest financial asset is often the earning capacity of its primary income earner.",
@@ -327,6 +355,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Savings & Regular Income Plans",
+        icon: "chart",
         tagline: "Goal-Based Saving + Financial Discipline + Informed Choice",
         description:
           "Save with purpose. Plan with discipline. For clients looking beyond pure protection, we help evaluate suitable long-term savings-oriented insurance solutions.",
@@ -342,6 +371,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
       },
       {
         title: "Health & Medical Insurance",
+        icon: "checkcircle",
         tagline: "Health Protection + Financial Protection + Family Security",
         description:
           "One medical emergency shouldn't become a financial emergency. Healthcare costs can significantly impact family finances. The right health-insurance coverage can provide an important layer of financial protection.",
