@@ -14,6 +14,9 @@ export function ServiceRow({ group, index }: { group: ServiceGroup; index: numbe
             “{group.tagline}”
           </p>
         ) : null}
+        {group.description ? (
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink/65">{group.description}</p>
+        ) : null}
       </div>
       <ul className={`grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2 md:col-span-8 ${reversed ? "md:order-1" : ""}`}>
         {group.items.map((item) => (

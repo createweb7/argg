@@ -1,6 +1,7 @@
 export type ServiceGroup = {
   title: string;
   tagline?: string;
+  description?: string;
   items: string[];
 };
 
@@ -26,9 +27,9 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     shortName: "Finance",
     eyebrow: "01 — Finance",
     intro:
-      "Practical financial planning that turns your numbers into decisions you can act on.",
+      "Practical financial planning and independent director advisory — for growing businesses and their boards.",
     teaser:
-      "Budgeting, forecasting, cost reduction, and dashboards for businesses that want to see further ahead.",
+      "Budgeting, forecasting, and independent director advisory for businesses that want to see further ahead.",
     groups: [
       {
         title: "Corporate Finance & FP&A",
@@ -40,6 +41,24 @@ export const SERVICE_PILLARS: ServicePillar[] = [
           "MIS & Business Dashboards",
           "Cash Flow Management",
           "Strategic Decision Support",
+        ],
+      },
+      {
+        title: "Independent Director Advisory",
+        tagline: "Board-Ready Expertise. Independent Perspective. Responsible Governance.",
+        description:
+          "Our expert professionals are equipped to take up Independent Director roles, bringing strong expertise in Finance, Taxation, Risk Management, Corporate Governance and Strategic Decision-Making. ARGG Associates connects businesses with experienced professionals capable of contributing independent judgement, financial intelligence and strategic insight at the board level.",
+        items: [
+          "Board & Committee Participation",
+          "Financial & Tax Oversight",
+          "Risk & Internal Control Review",
+          "Corporate Governance Advisory",
+          "Strategic Business Perspective",
+          "Compliance & Regulatory Oversight",
+          "Independent & Objective Decision-Making",
+          "Audit Committee & Finance Expertise",
+          "Stakeholder & Management Advisory",
+          "Board-Level Financial Analysis",
         ],
       },
     ],
