@@ -263,7 +263,7 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     href: "/mayopi-advisories",
     name: "Mayopi Advisories",
     shortName: "Mayopi Advisories",
-    eyebrow: "05 — Mayopi Advisories",
+    eyebrow: "Mayopi Advisories",
     intro:
       "Income Tax, GST, ITAT & GSTAT, and Life, Term, Savings & Health Insurance advisory — in partnership with mayopi ADVISORIES.",
     teaser:
