@@ -53,11 +53,15 @@ export function Footer() {
                 {COMPANY.email}
               </a>
             </p>
-            <p className="mt-1 flex flex-wrap gap-x-4">
-              {COMPANY.phones.map((phone) => (
-                <a key={phone.number} href={phone.href} className="hover:text-gold">
-                  {phone.label}: {phone.number}
-                </a>
+            <p className="mt-1 flex flex-wrap items-center gap-x-2">
+              <span>Contact:</span>
+              {COMPANY.phones.map((phone, i) => (
+                <span key={phone.number} className="flex items-center gap-2">
+                  <a href={phone.href} className="hover:text-gold">
+                    +91 {phone.number}
+                  </a>
+                  {i < COMPANY.phones.length - 1 ? <span className="text-cream/30">/</span> : null}
+                </span>
               ))}
             </p>
           </div>

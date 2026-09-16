@@ -49,12 +49,15 @@ export default function ContactPage() {
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-ink/50">Phone</dt>
-                  <dd className="mt-1 flex flex-col gap-1">
-                    {COMPANY.phones.map((phone) => (
-                      <a key={phone.number} href={phone.href} className="font-medium text-ink">
-                        {phone.label}: {phone.number}
-                      </a>
+                  <dt className="text-ink/50">Contact</dt>
+                  <dd className="mt-1 flex flex-wrap gap-x-2 gap-y-1">
+                    {COMPANY.phones.map((phone, i) => (
+                      <span key={phone.number} className="flex items-center gap-2">
+                        <a href={phone.href} className="font-medium text-ink">
+                          +91 {phone.number}
+                        </a>
+                        {i < COMPANY.phones.length - 1 ? <span className="text-ink/30">/</span> : null}
+                      </span>
                     ))}
                   </dd>
                 </div>
