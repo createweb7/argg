@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type FormEvent, type ReactNode } from "react";
+import Script from "next/script";
 import { Button } from "@/components/ui/Button";
 import { IconCheckCircle } from "@/components/icons";
 import {
@@ -131,43 +132,54 @@ export function ContactForm({
     }
   }
 
+  // Loaded here (rather than globally) so only pages that actually render a
+  // form pull in Google's script and show the reCAPTCHA badge.
+  const recaptchaScript = RECAPTCHA_SITE_KEY ? (
+    <Script src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`} strategy="afterInteractive" />
+  ) : null;
+
   if (status === "success") {
     return (
-      <div
-        role="status"
-        className={`flex flex-col items-center border border-emerald-600/20 bg-emerald-50/60 text-center ${compact ? "p-6" : "p-10"}`}
-      >
-        <span
-          className={`flex shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white ${compact ? "h-11 w-11" : "h-14 w-14"}`}
+      <>
+        {recaptchaScript}
+        <div
+          role="status"
+          className={`flex flex-col items-center border border-emerald-600/20 bg-emerald-50/60 text-center ${compact ? "p-6" : "p-10"}`}
         >
-          <IconCheckCircle className={compact ? "h-6 w-6" : "h-8 w-8"} />
-        </span>
-        <h3
-          className={`font-display font-medium tracking-tight text-ink ${compact ? "mt-3 text-lg" : "mt-5 text-2xl"}`}
-        >
-          Message sent.
-        </h3>
-        <p className={`max-w-sm leading-relaxed text-ink/70 ${compact ? "mt-2 text-sm" : "mt-3"}`}>
-          Thank you for reaching out — we usually respond within one business day. If your enquiry is
-          urgent, call us at{" "}
-          <a href={COMPANY.phones[0].href} className="font-medium text-gold-deep">
-            {COMPANY.phones[0].number}
-          </a>
-          .
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className={`font-semibold text-gold-deep underline underline-offset-4 ${compact ? "mt-4 text-xs" : "mt-6 text-sm"}`}
-        >
-          Send another message
-        </button>
-      </div>
+          <span
+            className={`flex shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white ${compact ? "h-11 w-11" : "h-14 w-14"}`}
+          >
+            <IconCheckCircle className={compact ? "h-6 w-6" : "h-8 w-8"} />
+          </span>
+          <h3
+            className={`font-display font-medium tracking-tight text-ink ${compact ? "mt-3 text-lg" : "mt-5 text-2xl"}`}
+          >
+            Message sent.
+          </h3>
+          <p className={`max-w-sm leading-relaxed text-ink/70 ${compact ? "mt-2 text-sm" : "mt-3"}`}>
+            Thank you for reaching out — we usually respond within one business day. If your enquiry is
+            urgent, call us at{" "}
+            <a href={COMPANY.phones[0].href} className="font-medium text-gold-deep">
+              {COMPANY.phones[0].number}
+            </a>
+            .
+          </p>
+          <button
+            type="button"
+            onClick={() => setStatus("idle")}
+            className={`font-semibold text-gold-deep underline underline-offset-4 ${compact ? "mt-4 text-xs" : "mt-6 text-sm"}`}
+          >
+            Send another message
+          </button>
+        </div>
+      </>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className={`flex flex-col ${compact ? "gap-3" : "gap-5"}`}>
+    <>
+      {recaptchaScript}
+      <form onSubmit={handleSubmit} noValidate className={`flex flex-col ${compact ? "gap-3" : "gap-5"}`}>
       {status === "error" && serverError ? (
         <p
           role="alert"
@@ -305,7 +317,8 @@ export function ContactForm({
           apply.
         </p>
       ) : null}
-    </form>
+      </form>
+    </>
   );
 }
 
