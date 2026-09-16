@@ -11,12 +11,6 @@ export type CoreService = {
 // lib/content/services.ts, not invented.
 export const CORE_SERVICES: CoreService[] = [
   {
-    title: "Corporate Finance & FP&A",
-    description: "Turn financial data into clear business decisions.",
-    href: "/finance-services",
-    icon: "chart",
-  },
-  {
     title: "Virtual CFO & Finance Advisory",
     description: "Executive-level financial oversight without a full-time CFO.",
     href: "/business-advisory-services",
@@ -33,6 +27,12 @@ export const CORE_SERVICES: CoreService[] = [
     description: "Reliable GST registration, filing, and compliance review.",
     href: "/taxation-services",
     icon: "percent",
+  },
+  {
+    title: "Corporate Finance & FP&A",
+    description: "Turn financial data into clear business decisions.",
+    href: "/finance-services",
+    icon: "chart",
   },
   {
     title: "Business Registration & Compliance",
