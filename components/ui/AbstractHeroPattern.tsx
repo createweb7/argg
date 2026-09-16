@@ -8,6 +8,7 @@ const VARIANTS = {
   growth: { rotate: -15, x1: 5, y1: 60, x2: 90, y2: 5 },
   mayopi: { rotate: 35, x1: 15, y1: 5, x2: 85, y2: 90 },
   contact: { rotate: 60, x1: 40, y1: 0, x2: 100, y2: 100 },
+  enquiries: { rotate: -45, x1: 0, y1: 0, x2: 100, y2: 65 },
 } as const;
 
 export type HeroPatternVariant = keyof typeof VARIANTS;

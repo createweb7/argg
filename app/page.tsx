@@ -164,7 +164,7 @@ export default function HomePage() {
       <CTASection
         heading="Ready to move your business forward?"
         supporting="Let's turn financial clarity into your next opportunity for growth."
-        primaryCta={{ label: "Talk to an Expert", href: "/contact" }}
+        primaryCta={{ label: "Talk to an Expert", href: "/enquiries" }}
         secondaryCta={{ label: "Contact Us", href: "/contact" }}
       />
     </>

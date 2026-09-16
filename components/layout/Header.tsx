@@ -72,6 +72,7 @@ export function Header() {
 
   const isHomeActive = pathname === "/";
   const isAboutActive = pathname === "/about";
+  const isEnquiriesActive = pathname === "/enquiries";
   const isContactActive = pathname === "/contact";
   const isServicesActive =
     pathname === "/services" || SERVICE_PILLARS.some((pillar) => pathname === pillar.href);
@@ -165,6 +166,14 @@ export function Header() {
             </div>
 
             <Link
+              href="/enquiries"
+              aria-current={isEnquiriesActive ? "page" : undefined}
+              className={navLinkClass(isEnquiriesActive)}
+            >
+              Enquiries
+            </Link>
+
+            <Link
               href="/contact"
               aria-current={isContactActive ? "page" : undefined}
               className={navLinkClass(isContactActive)}
@@ -247,6 +256,14 @@ export function Header() {
                 </Link>
               </div>
             ) : null}
+
+            <Link
+              href="/enquiries"
+              aria-current={isEnquiriesActive ? "page" : undefined}
+              className={mobileNavLinkClass(isEnquiriesActive)}
+            >
+              Enquiries
+            </Link>
 
             <Link
               href="/contact"

@@ -24,7 +24,7 @@ export function ServicePillarPage({ pillar }: { pillar: ServicePillar }) {
       <CTASection
         heading={pillar.ctaHeading}
         supporting={pillar.ctaSupporting}
-        primaryCta={{ label: "Talk to an Expert", href: "/contact" }}
+        primaryCta={{ label: "Talk to an Expert", href: "/enquiries" }}
         secondaryCta={{ label: "View All Services", href: "/services" }}
       />
     </>

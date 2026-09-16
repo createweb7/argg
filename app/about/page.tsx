@@ -130,7 +130,7 @@ export default function AboutPage() {
       <CTASection
         heading="Let's talk about your business."
         supporting="Whether it's financial clarity, tax planning, or a strategy for growth — start with a conversation."
-        primaryCta={{ label: "Talk to an Expert", href: "/contact" }}
+        primaryCta={{ label: "Talk to an Expert", href: "/enquiries" }}
       />
     </>
   );

@@ -77,7 +77,7 @@ export default function ServicesHubPage() {
       <CTASection
         heading="Let's discuss your business."
         supporting="Tell us where you need clarity, and we'll help identify where we can help."
-        primaryCta={{ label: "Talk to an Expert", href: "/contact" }}
+        primaryCta={{ label: "Talk to an Expert", href: "/enquiries" }}
       />
     </>
   );

@@ -27,6 +27,12 @@ export default function ContactPage() {
       <Section tone="light">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
           <div className="md:col-span-7">
+            <p className="mb-6 text-sm text-ink/60">
+              Have a specific service in mind?{" "}
+              <a href="/enquiries" className="font-medium text-gold-deep">
+                Send a quick enquiry →
+              </a>
+            </p>
             <ContactForm />
           </div>
 

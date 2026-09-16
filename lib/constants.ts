@@ -56,8 +56,9 @@ export const FOUNDER = {
 export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
+  { label: "Enquiries", href: "/enquiries" },
   { label: "Contact Us", href: "/contact" },
 ] as const;
 
-export const PRIMARY_CTA = { label: "Talk to an Expert", href: "/contact" };
+export const PRIMARY_CTA = { label: "Talk to an Expert", href: "/enquiries" };
 export const SECONDARY_CTA = { label: "Explore Our Services", href: "/services" };
