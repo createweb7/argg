@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/validation/contact";
 import { isResendConfigured, sendContactEmail } from "@/lib/resend";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 import { COMPANY } from "@/lib/constants";
 
 export async function POST(request: Request) {
@@ -11,7 +12,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Invalid request body." }, { status: 400 });
   }
 
-  const result = contactSchema.safeParse(body);
+  const { recaptchaToken, ...fields } = (body ?? {}) as Record<string, unknown>;
+
+  const result = contactSchema.safeParse(fields);
   if (!result.success) {
     const fieldErrors: Record<string, string> = {};
     for (const issue of result.error.issues) {
@@ -19,6 +22,14 @@ export async function POST(request: Request) {
       if (!fieldErrors[key]) fieldErrors[key] = issue.message;
     }
     return NextResponse.json({ ok: false, fieldErrors }, { status: 400 });
+  }
+
+  const isHuman = await verifyRecaptcha(typeof recaptchaToken === "string" ? recaptchaToken : null);
+  if (!isHuman) {
+    return NextResponse.json(
+      { ok: false, error: "We couldn't verify your submission. Please try again." },
+      { status: 400 }
+    );
   }
 
   if (!isResendConfigured()) {

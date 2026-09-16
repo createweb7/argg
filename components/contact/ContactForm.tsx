@@ -25,6 +25,31 @@ function quickEnquiryMessage(service?: string) {
   return `Quick enquiry from the website — interested in ${service || "ARGG Associates services"}.`;
 }
 
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+function getRecaptchaToken(action: string): Promise<string | null> {
+  if (!RECAPTCHA_SITE_KEY || typeof window === "undefined" || !window.grecaptcha) {
+    return Promise.resolve(null);
+  }
+  return new Promise((resolve) => {
+    window.grecaptcha!.ready(() => {
+      window
+        .grecaptcha!.execute(RECAPTCHA_SITE_KEY!, { action })
+        .then(resolve)
+        .catch(() => resolve(null));
+    });
+  });
+}
+
 export function ContactForm({
   defaultService,
   compact = false,
@@ -73,10 +98,11 @@ export function ContactForm({
     setStatus("submitting");
 
     try {
+      const recaptchaToken = await getRecaptchaToken("contact_form");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(result.data),
+        body: JSON.stringify({ ...result.data, recaptchaToken }),
       });
       const data = await res.json();
 
@@ -248,6 +274,20 @@ export function ContactForm({
       >
         {status === "submitting" ? "Sending…" : "Send Enquiry"}
       </Button>
+
+      {RECAPTCHA_SITE_KEY ? (
+        <p className={`text-ink/40 ${compact ? "text-[10px]" : "text-xs"}`}>
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline">
+            Terms of Service
+          </a>{" "}
+          apply.
+        </p>
+      ) : null}
     </form>
   );
 }

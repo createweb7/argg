@@ -93,3 +93,11 @@ body {
     background: linear-gradient(to right, var(--color-gold) 0%, color-mix(in srgb, var(--color-gold) 25%, transparent) 100%);
   }
 }
+
+/* reCAPTCHA v3 runs invisibly with no checkbox UI, but Google's floating
+   badge clashes with the editorial layout, so it's hidden here. Its
+   required attribution text is shown manually next to the submit button
+   instead (see ContactForm), per Google's reCAPTCHA branding terms. */
+.grecaptcha-badge {
+  visibility: hidden;
+}
