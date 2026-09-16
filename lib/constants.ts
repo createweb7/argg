@@ -49,6 +49,10 @@ export const FOUNDER = {
     "Financial Controls",
     "Strategic Planning",
   ],
+  bio: [
+    "His experience spans financial strategy, budgeting & forecasting, cost optimization, cash-flow management, internal controls, taxation, compliance and corporate governance — supporting startups, entrepreneurs and established businesses in building stronger financial and operational foundations.",
+    "His approach is simple: strengthen the numbers, improve the decisions, and build businesses for sustainable growth.",
+  ],
   quote:
     "Empowering Businesses Through Financial Clarity, Compliance Excellence & Sustainable Growth.",
 } as const;

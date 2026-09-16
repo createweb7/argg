@@ -53,6 +53,14 @@ export function FounderProfile() {
           ))}
         </div>
 
+        <div className="mt-6 flex max-w-xl flex-col gap-4">
+          {FOUNDER.bio.map((paragraph) => (
+            <p key={paragraph} className="leading-relaxed text-ink/70">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
         <blockquote className="mt-8 border-l-2 border-gold pl-5 font-display text-xl leading-snug font-medium text-ink/85 italic">
           “{FOUNDER.quote}”
         </blockquote>
