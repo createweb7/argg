@@ -35,6 +35,15 @@ async function main() {
     .webp({ quality: 90 })
     .toFile(path.join(OUT, "logo.webp"));
 
+  // Same lockup as a PNG, for transactional emails — Outlook desktop and
+  // some other mail clients don't render WebP, so the in-page asset can't
+  // be reused directly there. Kept transparent so it drops onto the email
+  // header's dark background the same way the WebP version does in-page.
+  await sharp(path.join(SRC, "ARGG_Associates_Transparent.png"))
+    .resize(600, null, { withoutEnlargement: true })
+    .png()
+    .toFile(path.join(OUT, "logo-email.png"));
+
   // logo-new.png (the hexagon mark alone, square) stays the source for the
   // favicon/apple-icon — a square icon, not the wide lockup, is what those
   // need. The favicon/apple-icon are a Next.js file-convention special

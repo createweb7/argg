@@ -11,7 +11,9 @@ const SUPPORT_EMAIL = COMPANY.email;
 const SITE_ORIGIN = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : SITE_URL;
-const LOGO_URL = `${SITE_ORIGIN}/icon.png`;
+// The full "hexagon + ARGG Associates" lockup — same logo used on the site
+// itself (Header/Footer) — as a PNG for broad email-client compatibility.
+const LOGO_URL = `${SITE_ORIGIN}/images/logo-email.png`;
 
 export function isResendConfigured() {
   return Boolean(process.env.RESEND_API_KEY);
@@ -129,11 +131,14 @@ function buildEmailShell({ preheader, body }: { preheader: string; body: string 
               <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="max-width: 560px; background-color: #ffffff; border: 1px solid #e5e2d9;">
                 <tr>
                   <td style="background-color: #020202; padding: 28px 32px; text-align: center;">
-                    <img src="${LOGO_URL}" width="40" height="40" alt="${COMPANY.name}" style="display: block; margin: 0 auto 10px; border-radius: 8px;" />
-                    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 18px; letter-spacing: 0.04em; color: #f8f7f4;">
-                      ${COMPANY.name}
-                    </span>
-                    <div style="margin-top: 4px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #c4943d;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" style="margin: 0 auto; border-collapse: collapse;">
+                      <tr>
+                        <td style="background-color: #f8f7f4; border-radius: 8px; padding: 10px 18px;">
+                          <img src="${LOGO_URL}" width="220" alt="${COMPANY.name}" style="display: block; width: 220px; height: auto;" />
+                        </td>
+                      </tr>
+                    </table>
+                    <div style="margin-top: 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #c4943d;">
                       ${COMPANY.tagline}
                     </div>
                   </td>
