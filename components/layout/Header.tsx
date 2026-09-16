@@ -96,7 +96,7 @@ export function Header() {
       >
         <div className="mx-auto flex h-24 max-w-[1280px] items-center justify-between px-6 md:px-10">
           <Link href="/" className="flex items-center" aria-label={`${COMPANY.name} — Home`}>
-            <LogoMark heightClass="h-12 md:h-[72px]" />
+            <LogoMark heightClass="h-16 md:h-[72px]" />
           </Link>
 
           <nav className="hidden items-center gap-9 md:flex">
