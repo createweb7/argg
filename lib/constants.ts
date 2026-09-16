@@ -41,7 +41,7 @@ export const FOUNDER = {
     "Certified Independent Director (IICA)",
   ],
   experience:
-    "17+ years of corporate experience across Logistics, EPC, Construction, Manufacturing, Oil & Gas, and IT.",
+    "18+ years of corporate experience across Logistics, EPC, Construction, Manufacturing, Oil & Gas, and IT.",
   specializations: [
     "FP&A",
     "Cost Management",

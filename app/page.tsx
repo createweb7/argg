@@ -29,7 +29,7 @@ export const metadata = buildMetadata({
 });
 
 const CREDENTIALS = [
-  { icon: <IconChartUp />, title: "17+ Years", description: "Corporate finance experience" },
+  { icon: <IconChartUp />, title: "18+ Years", description: "Corporate finance experience" },
   { icon: <IconBadge />, title: "FCMA", description: "Cost & Management Accountant" },
   { icon: <IconShieldCheck />, title: "FCS", description: "Company Secretary" },
   { icon: <IconBuilding />, title: "Multi-Industry Exposure", description: "Logistics, EPC, Manufacturing, Oil & Gas, IT" },
