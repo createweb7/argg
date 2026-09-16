@@ -25,10 +25,10 @@ export const MAYOPI = {
   tagline: "Tax Smart. Protected Better. Financially Prepared.",
   closingTagline: "Tax | GST | Life Insurance | Term Insurance | Savings Plans | Health Insurance",
   closingLine: "Professional Advice. Informed Decisions. Long-Term Protection.",
-  phones: [
-    { label: "Office", number: "98411 53620", href: "tel:+919841153620" },
-    { label: "Office", number: "93639 53620", href: "tel:+919363953620" },
-    { label: "Enquiry", number: "8682 003 004", href: "tel:+918682003004" },
+  enquiryPhone: { number: "8682 003 004", href: "tel:+918682003004" },
+  connectPhones: [
+    { number: "93639 53620", href: "tel:+919363953620" },
+    { number: "93423 53620", href: "tel:+919342353620" },
   ],
 } as const;
 

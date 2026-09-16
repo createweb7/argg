@@ -164,16 +164,24 @@ export default function MayopiAdvisoriesPage() {
           <span className="text-xs font-semibold tracking-[0.2em] text-gold-deep uppercase">
             Contact mayopi ADVISORIES
           </span>
-          <div className="mt-5 flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-6">
-            {MAYOPI.phones.map((phone) => (
-              <a
-                key={phone.number}
-                href={phone.href}
-                className="font-display text-lg font-medium tracking-tight text-ink hover:text-gold-deep"
-              >
-                {phone.label}: {phone.number}
+          <div className="mt-5 flex flex-col items-center gap-3">
+            <p className="font-display text-lg font-medium tracking-tight text-ink">
+              For Enquiries:{" "}
+              <a href={MAYOPI.enquiryPhone.href} className="hover:text-gold-deep">
+                +91 {MAYOPI.enquiryPhone.number}
               </a>
-            ))}
+            </p>
+            <p className="font-display text-lg font-medium tracking-tight text-ink">
+              Connect on{" "}
+              {MAYOPI.connectPhones.map((phone, i) => (
+                <span key={phone.number}>
+                  <a href={phone.href} className="hover:text-gold-deep">
+                    +91 {phone.number}
+                  </a>
+                  {i < MAYOPI.connectPhones.length - 1 ? " / " : null}
+                </span>
+              ))}
+            </p>
           </div>
         </RevealOnScroll>
       </Section>
