@@ -16,7 +16,6 @@ export function ProcessTimeline({
       {steps.map((step, i) => (
         <ProcessStep
           key={step.title}
-          index={i + 1}
           title={step.title}
           description={step.description}
           isLast={i === steps.length - 1}

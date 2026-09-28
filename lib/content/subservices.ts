@@ -13,7 +13,7 @@ export const CORE_SERVICES: CoreService[] = [
   {
     title: "Virtual CFO & Finance Advisory",
     description: "Executive-level financial oversight without a full-time CFO.",
-    href: "/business-advisory-services",
+    href: "/virtual-cfo-services",
     icon: "users",
   },
   {
@@ -31,19 +31,19 @@ export const CORE_SERVICES: CoreService[] = [
   {
     title: "Corporate Finance & FP&A",
     description: "Turn financial data into clear business decisions.",
-    href: "/finance-services",
+    href: "/business-management-consultancy-services",
     icon: "chart",
   },
   {
     title: "Business Registration & Compliance",
     description: "MSME, GST, and startup registration, plus annual compliance support.",
-    href: "/business-advisory-services",
+    href: "/business-management-consultancy-services",
     icon: "badge",
   },
   {
     title: "Training & Capability Building",
     description: "Practical financial skills for founders and finance teams.",
-    href: "/business-growth-services",
+    href: "/business-management-consultancy-services",
     icon: "cap",
   },
 ];

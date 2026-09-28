@@ -22,11 +22,9 @@ const ICONS = {
 
 export function CoreServiceCard({
   service,
-  index,
   featured = false,
 }: {
   service: CoreService;
-  index: number;
   featured?: boolean;
 }) {
   const Icon = ICONS[service.icon];
@@ -52,18 +50,13 @@ export function CoreServiceCard({
       <span className="pointer-events-none absolute top-0 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
 
       <div className="relative">
-        <div className="flex items-center justify-between">
-          <span
-            className={`flex items-center justify-center rounded-full border border-gold/30 text-gold transition-colors duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-ink ${
-              featured ? "h-14 w-14" : "h-10 w-10"
-            }`}
-          >
-            <Icon className={featured ? "h-7 w-7" : "h-5 w-5"} />
-          </span>
-          <span className={`font-display text-cream/25 ${featured ? "text-base" : "text-sm"}`}>
-            {String(index).padStart(2, "0")}
-          </span>
-        </div>
+        <span
+          className={`flex items-center justify-center rounded-full border border-gold/30 text-gold transition-colors duration-300 group-hover:border-gold group-hover:bg-gold group-hover:text-ink ${
+            featured ? "h-14 w-14" : "h-10 w-10"
+          }`}
+        >
+          <Icon className={featured ? "h-7 w-7" : "h-5 w-5"} />
+        </span>
         <h3
           className={`mt-6 font-display font-medium tracking-tight ${
             featured ? "text-2xl md:text-3xl" : "text-lg"

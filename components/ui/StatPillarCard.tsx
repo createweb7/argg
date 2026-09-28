@@ -1,13 +1,11 @@
 import Link from "next/link";
 
 export function StatPillarCard({
-  index,
   title,
   description,
   href,
   tone = "light",
 }: {
-  index: number;
   title: string;
   description: string;
   href?: string;
@@ -19,8 +17,7 @@ export function StatPillarCard({
 
   const content = (
     <>
-      <span className={`font-display text-2xl ${numberColor}`}>{String(index).padStart(2, "0")}</span>
-      <h3 className="mt-4 font-display text-xl font-medium tracking-tight">{title}</h3>
+      <h3 className="font-display text-xl font-medium tracking-tight">{title}</h3>
       <p className={`mt-2 text-sm leading-relaxed ${descColor}`}>{description}</p>
       {href ? (
         <span className={`mt-4 inline-block text-xs font-semibold uppercase tracking-widest ${numberColor}`}>

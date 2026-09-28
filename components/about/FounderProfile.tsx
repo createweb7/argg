@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { SocialLinks } from "@/components/ui/SocialLinks";
 import { FOUNDER } from "@/lib/constants";
 
 export function FounderProfile() {
@@ -64,6 +65,13 @@ export function FounderProfile() {
         <blockquote className="mt-8 border-l-2 border-gold pl-5 font-display text-xl leading-snug font-medium text-ink/85 italic">
           “{FOUNDER.quote}”
         </blockquote>
+
+        <div className="mt-6">
+          <span className="text-xs font-semibold tracking-[0.2em] text-gold-deep uppercase">Connect</span>
+          <div className="mt-3">
+            <SocialLinks links={FOUNDER.social} label={`${FOUNDER.name} on social media`} />
+          </div>
+        </div>
       </RevealOnScroll>
     </div>
   );

@@ -19,17 +19,17 @@ const FAQ_ITEMS = [
   {
     question: "I'm not sure which service I need — where do I start?",
     answer:
-      "Most engagements start with a conversation about your business and what's prompting the search — a tax deadline, a growth decision, or just wanting a clearer financial picture. From there we point you to the right service, whether that's Finance, Taxation, Business Advisory, or Business Growth.",
+      "Most engagements start with a conversation about your business and what's prompting the search — a tax deadline, a growth decision, or just wanting a clearer financial picture. From there we point you to the right service, whether that's Virtual CFO Services, Business & Management Consultancy, or Taxation.",
   },
   {
     question: "Do you work with individuals or only businesses?",
     answer:
-      "Both. Our taxation services cover individuals, HUFs, and salaried employees, alongside business and professional clients across Finance, Business Advisory, and Business Growth.",
+      "Both. Our taxation services cover individuals, HUFs, and salaried employees, alongside business and professional clients across Virtual CFO Services and Business & Management Consultancy.",
   },
   {
     question: "Can you support an existing finance team rather than replace it?",
     answer:
-      "Yes — Virtual CFO and Business Advisory engagements are often structured to support an existing team with reviews, dashboards, and process improvement rather than to replace in-house finance functions.",
+      "Yes — Virtual CFO and Business & Management Consultancy engagements are often structured to support an existing team with reviews, dashboards, and process improvement rather than to replace in-house finance functions.",
   },
   {
     question: "How do I get started?",
@@ -54,12 +54,7 @@ export default function ServicesHubPage() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {SERVICE_PILLARS.map((pillar, i) => (
             <RevealOnScroll key={pillar.slug} delayMs={i * 80}>
-              <StatPillarCard
-                index={i + 1}
-                title={pillar.name}
-                description={pillar.teaser}
-                href={pillar.href}
-              />
+              <StatPillarCard title={pillar.name} description={pillar.teaser} href={pillar.href} />
             </RevealOnScroll>
           ))}
         </div>

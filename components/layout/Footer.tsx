@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { LogoMark } from "@/components/ui/LogoMark";
-import { COMPANY } from "@/lib/constants";
+import { SocialLinks } from "@/components/ui/SocialLinks";
+import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
+import { COMPANY, COMPANY_SOCIAL } from "@/lib/constants";
 import { SERVICE_PILLARS } from "@/lib/content/services";
 
 export function Footer() {
@@ -8,6 +10,20 @@ export function Footer() {
 
   return (
     <footer className="bg-ink text-cream">
+      <div className="border-b border-cream/10">
+        <div className="mx-auto flex max-w-[1280px] flex-col gap-6 px-6 py-12 md:flex-row md:items-center md:justify-between md:px-10">
+          <div>
+            <h3 className="font-display text-xl font-medium tracking-tight">Subscribe to our Newsletter</h3>
+            <p className="mt-1 max-w-sm text-sm text-cream/60">
+              Practical finance, tax, and growth insights — straight to your inbox.
+            </p>
+          </div>
+          <div className="w-full md:max-w-md">
+            <NewsletterForm />
+          </div>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
           <div className="md:col-span-2">
@@ -18,6 +34,9 @@ export function Footer() {
               {COMPANY.name} is a business advisory firm helping individuals and businesses with
               finance, tax, and growth-focused strategy — {COMPANY.tagline}.
             </p>
+            <div className="mt-6">
+              <SocialLinks links={COMPANY_SOCIAL} tone="dark" label={`${COMPANY.name} on social media`} />
+            </div>
           </div>
 
           <div>

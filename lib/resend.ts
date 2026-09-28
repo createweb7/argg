@@ -119,6 +119,33 @@ async function sendConfirmationEmail(input: ContactInput) {
   });
 }
 
+export async function sendNewsletterSignupEmail(email: string) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+
+  const resend = new Resend(apiKey);
+
+  const html = buildEmailShell({
+    preheader: `New newsletter signup: ${email}`,
+    body: `
+      <h1 style="margin: 0 0 20px; font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 600; color: #020202;">
+        New newsletter subscriber
+      </h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #020202;">${escapeHtml(email)}</p>
+    `,
+  });
+
+  await resend.emails.send({
+    from: FROM_EMAIL,
+    to: TO_EMAIL,
+    replyTo: email,
+    subject: `New newsletter subscriber — ${COMPANY.name} website`,
+    html,
+  });
+}
+
 function buildEmailShell({ preheader, body }: { preheader: string; body: string }) {
   return `
     <!DOCTYPE html>

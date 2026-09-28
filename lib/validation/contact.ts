@@ -1,10 +1,9 @@
 import { z } from "zod";
 
 export const SERVICE_INTEREST_OPTIONS = [
-  "Finance",
+  "Virtual CFO Services",
+  "Business & Management Consultancy Services",
   "Taxation Services",
-  "Business Advisory",
-  "Business Growth",
   "Mayopi Advisories",
   "Not sure yet",
 ] as const;

@@ -55,6 +55,19 @@ export const FOUNDER = {
   ],
   quote:
     "Empowering Businesses Through Financial Clarity, Compliance Excellence & Sustainable Growth.",
+  social: {
+    linkedin: "https://www.linkedin.com/in/mathanrams",
+    facebook: "https://www.facebook.com/mathanrams",
+    instagram: "https://www.instagram.com/mathanrams/",
+    youtube: "https://www.youtube.com/@mathanrams",
+  },
+} as const;
+
+export const COMPANY_SOCIAL = {
+  facebook: "https://www.facebook.com/profile.php?id=61585995209236",
+  instagram: "https://www.instagram.com/arggassociates/",
+  youtube: "https://www.youtube.com/@ARGGAssociates",
+  linkedin: "https://www.linkedin.com/company/112559592/",
 } as const;
 
 export const NAV_LINKS = [

@@ -130,3 +130,40 @@ export function IconCheckCircle(props: IconProps) {
     </svg>
   );
 }
+
+export function IconLinkedIn(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M7.5 10v7M7.5 7v.01M11.5 17v-4.5c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5V17" strokeLinejoin="round" />
+      <path d="M11.5 10v7" />
+    </svg>
+  );
+}
+
+export function IconFacebook(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M14 21v-7h2.5l.5-3H14V9c0-.9.3-1.5 1.7-1.5H17V4.8c-.3 0-1.2-.1-2.3-.1-2.3 0-3.7 1.4-3.7 3.9V11H8.5v3H11v7h3z" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function IconInstagram(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function IconYoutube(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <rect x="2.5" y="6" width="19" height="12" rx="3.5" />
+      <path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" strokeLinejoin="round" />
+    </svg>
+  );
+}

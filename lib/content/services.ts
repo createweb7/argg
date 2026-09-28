@@ -29,20 +29,63 @@ export type ServicePillar = {
   groups: ServiceGroup[];
   ctaHeading: string;
   ctaSupporting: string;
-  heroVariant: "finance" | "taxation" | "advisory" | "growth" | "mayopi";
+  heroVariant: "virtual-cfo" | "taxation" | "consultancy" | "mayopi";
 };
 
 export const SERVICE_PILLARS: ServicePillar[] = [
   {
-    slug: "finance-services",
-    href: "/finance-services",
-    name: "Finance",
-    shortName: "Finance",
-    eyebrow: "01 — Finance",
+    slug: "virtual-cfo-services",
+    href: "/virtual-cfo-services",
+    name: "Virtual CFO Services",
+    shortName: "Virtual CFO",
+    eyebrow: "Virtual CFO Services",
     intro:
-      "Practical financial planning and independent director advisory — for growing businesses and their boards.",
+      "Enterprise-level financial leadership for growing businesses — without the cost of a full-time CFO.",
     teaser:
-      "Budgeting, forecasting, and independent director advisory for businesses that want to see further ahead.",
+      "Virtual CFO advisory, financial planning, and board-level reporting for businesses that want financial leadership on their terms.",
+    groups: [
+      {
+        title: "Planning, Forecasting & Reporting",
+        icon: "chart",
+        tagline: "Enterprise-level financial expertise for growing businesses.",
+        items: [
+          "Financial Planning & Analysis — FP&A",
+          "Budgeting & Forecasting",
+          "Cash Flow Planning",
+          "Financial MIS & Dashboard",
+          "Cost & Profitability Analysis",
+          "Variance Analysis",
+          "Working Capital Management",
+          "Financial KPI Development",
+        ],
+      },
+      {
+        title: "Strategic & Board-Level Advisory",
+        icon: "users",
+        items: [
+          "Virtual CFO Services",
+          "Management Decision Support",
+          "Business Performance Review",
+          "CXO-Level Finance Advisory",
+          "Board / Management Reporting Support",
+        ],
+      },
+    ],
+    ctaHeading: "Ready for financial leadership on your terms?",
+    ctaSupporting:
+      "Let's talk about the CFO-level support your business needs to make faster, better-informed decisions.",
+    heroVariant: "virtual-cfo",
+  },
+  {
+    slug: "business-management-consultancy-services",
+    href: "/business-management-consultancy-services",
+    name: "Business & Management Consultancy Services",
+    shortName: "Business & Management Consultancy",
+    eyebrow: "Business & Management Consultancy Services",
+    intro:
+      "Corporate finance, independent director advisory, business registration, accounting, and growth consulting — practical financial and management support for every stage of your business.",
+    teaser:
+      "Corporate finance, business registration, accounting, and growth consulting brought together under one practical advisory relationship.",
     groups: [
       {
         title: "Corporate Finance & FP&A",
@@ -76,18 +119,81 @@ export const SERVICE_PILLARS: ServicePillar[] = [
           "Board-Level Financial Analysis",
         ],
       },
+      {
+        title: "Business Registration & Compliance",
+        icon: "badge",
+        items: [
+          "MSME / Udyam Registration",
+          "GST Registration",
+          "Professional Tax Registration",
+          "Business Setup Advisory",
+          "PAN / TAN Support",
+          "FSSAI Registration Support",
+          "Startup & Business Registration Support",
+          "Annual Compliance Support",
+          "ROC / MCA Compliance Coordination",
+          "Business Compliance Health Check",
+        ],
+      },
+      {
+        title: "Accounting & Bookkeeping Services",
+        icon: "receipt",
+        tagline: "Accurate Books. Better Decisions. Stronger Businesses.",
+        items: [
+          "Bookkeeping & Accounting Services",
+          "Monthly / Quarterly Financial Statements",
+          "Accounts Payable & Receivable Management",
+          "Bank Reconciliation",
+          "Ledger Scrutiny & Review",
+          "Month-End Closing Support",
+          "MIS Reporting",
+          "Cash Flow Monitoring",
+          "Expense & Cost Tracking",
+          "Management Reporting",
+          "Accounting Process Review",
+        ],
+      },
+      {
+        title: "Financial & Management Consulting",
+        icon: "target",
+        items: [
+          "Financial Feasibility Analysis",
+          "Business Financial Planning",
+          "Cost Reduction & Cost Optimization",
+          "Profitability Improvement",
+          "Working Capital Optimization",
+          "Budgeting & Forecasting",
+          "Business Performance Analysis",
+          "Management Decision Support",
+          "Financial Risk Assessment",
+          "Internal Control Review",
+          "Process Improvement",
+          "Business MIS Design",
+        ],
+      },
+      {
+        title: "Training & Capability Building",
+        icon: "cap",
+        items: [
+          "Advanced Excel for Finance",
+          "Financial Intelligence with AI",
+          "Power Query & Power BI",
+          "Finance for Non-Finance Managers",
+          "Budgeting & Cost Control Programs",
+        ],
+      },
     ],
-    ctaHeading: "Ready for financial clarity?",
+    ctaHeading: "Ready to build a stronger business?",
     ctaSupporting:
-      "Let's review your numbers and build a finance function that supports real decisions.",
-    heroVariant: "finance",
+      "Let's talk about the finance, compliance, and growth consulting your business needs, brought together in one relationship.",
+    heroVariant: "consultancy",
   },
   {
     slug: "taxation-services",
     href: "/taxation-services",
     name: "Taxation Services",
     shortName: "Tax",
-    eyebrow: "02 — Tax",
+    eyebrow: "Taxation Services",
     intro:
       "Reliable, timely tax and GST compliance so filing deadlines never become a source of last-minute stress.",
     teaser:
@@ -140,123 +246,6 @@ export const SERVICE_PILLARS: ServicePillar[] = [
     ctaHeading: "Timely filing, peace of mind.",
     ctaSupporting: "Let us take care of your taxes, so you can focus on your growth.",
     heroVariant: "taxation",
-  },
-  {
-    slug: "business-advisory-services",
-    href: "/business-advisory-services",
-    name: "Business Advisory",
-    shortName: "Business Advisory",
-    eyebrow: "03 — Business Advisory",
-    intro:
-      "Virtual CFO advisory, business registration and compliance, and accounting support — practical financial leadership for growing businesses.",
-    teaser:
-      "Virtual CFO advisory, business registration, and accounting support for businesses that want financial leadership without the overhead.",
-    groups: [
-      {
-        title: "Virtual CFO & Finance Advisory",
-        icon: "users",
-        tagline:
-          "Enterprise-level financial expertise for growing businesses — without the cost of a full-time CFO.",
-        items: [
-          "Virtual CFO Services",
-          "Financial Planning & Analysis — FP&A",
-          "Budgeting & Forecasting",
-          "Cash Flow Planning",
-          "Financial MIS & Dashboard",
-          "Cost & Profitability Analysis",
-          "Variance Analysis",
-          "Working Capital Management",
-          "Management Decision Support",
-          "Business Performance Review",
-          "Financial KPI Development",
-          "CXO-Level Finance Advisory",
-          "Board / Management Reporting Support",
-        ],
-      },
-      {
-        title: "Business Registration & Compliance",
-        icon: "badge",
-        items: [
-          "MSME / Udyam Registration",
-          "GST Registration",
-          "Professional Tax Registration",
-          "Business Setup Advisory",
-          "PAN / TAN Support",
-          "FSSAI Registration Support",
-          "Startup & Business Registration Support",
-          "Annual Compliance Support",
-          "ROC / MCA Compliance Coordination",
-          "Business Compliance Health Check",
-        ],
-      },
-      {
-        title: "Accounting & Bookkeeping Services",
-        icon: "receipt",
-        tagline: "Accurate Books. Better Decisions. Stronger Businesses.",
-        items: [
-          "Bookkeeping & Accounting Services",
-          "Monthly / Quarterly Financial Statements",
-          "Accounts Payable & Receivable Management",
-          "Bank Reconciliation",
-          "Ledger Scrutiny & Review",
-          "Month-End Closing Support",
-          "MIS Reporting",
-          "Cash Flow Monitoring",
-          "Expense & Cost Tracking",
-          "Management Reporting",
-          "Accounting Process Review",
-        ],
-      },
-    ],
-    ctaHeading: "Ready for financial leadership on your terms?",
-    ctaSupporting:
-      "Let's talk about the CFO-level support, compliance, and bookkeeping your business needs.",
-    heroVariant: "advisory",
-  },
-  {
-    slug: "business-growth-services",
-    href: "/business-growth-services",
-    name: "Business Growth",
-    shortName: "Business Growth",
-    eyebrow: "04 — Business Growth",
-    intro:
-      "Financial and management consulting and capability-building that align your team's decisions with long-term objectives.",
-    teaser:
-      "Financial consulting and practical financial training for founders and finance teams.",
-    groups: [
-      {
-        title: "Financial & Management Consulting",
-        icon: "target",
-        items: [
-          "Financial Feasibility Analysis",
-          "Business Financial Planning",
-          "Cost Reduction & Cost Optimization",
-          "Profitability Improvement",
-          "Working Capital Optimization",
-          "Budgeting & Forecasting",
-          "Business Performance Analysis",
-          "Management Decision Support",
-          "Financial Risk Assessment",
-          "Internal Control Review",
-          "Process Improvement",
-          "Business MIS Design",
-        ],
-      },
-      {
-        title: "Training & Capability Building",
-        icon: "cap",
-        items: [
-          "Advanced Excel for Finance",
-          "Financial Intelligence with AI",
-          "Power Query & Power BI",
-          "Finance for Non-Finance Managers",
-          "Budgeting & Cost Control Programs",
-        ],
-      },
-    ],
-    ctaHeading: "Ready to turn clarity into growth?",
-    ctaSupporting: "Let's align your financial decisions with where the business is headed.",
-    heroVariant: "growth",
   },
   {
     slug: "mayopi-advisories",

@@ -99,7 +99,7 @@ export default function HomePage() {
               delayMs={(i % 3) * 80}
               className={CORE_SERVICE_SPANS[i]}
             >
-              <CoreServiceCard service={service} index={i + 1} featured={i === 0} />
+              <CoreServiceCard service={service} featured={i === 0} />
             </RevealOnScroll>
           ))}
         </div>
